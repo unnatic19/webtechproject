@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>MAPS</title>
+  <link rel="stylesheet" href="style2.css" type="text/css" />
+  <link rel="stylesheet" href="style1.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+  <div class="sticky-mp-header">
+    <img src="logo.png" style="height: 120px;width: 289px;">
+    <nav class="mp-nuew-nav">
+      <ul>
+        <li>
+          <a href="landing.html">Home</a>
+        </li>
+        <li>
+          <a href="aboutus_new.html">About Us</a>
+        </li>
+        <li>
+          <a href="signup_new.html">Register</a>
+        </li>
+        <li>
+          <a href="features_new.html">Features</a>
+        </li>
+        <li>
+          <a href="profile_new.html">Profile</a>
+        </li>
+        <li>
+          <a href="login_new.html">Login</a>
+        </li>
+        <li>
+          <a href="maps.html">maps</a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+  <div class="sticky-mp-canvas-wrap">
+  </div>
+  <div class="sticky-mp-content">
+    <div id="map">
+    </div>
+  </div>
+  <footer>
+    <div class="mp-footer-container">
+      <div class="footer-box">
+        <p>Copyright &copy; MaindoWorks V.O.F., Amstelveen, The Netherlands</p>
+      </div>
+      <div class="mp-footer-box">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-behance"></i>
+        <i class="fa fa-github"></i>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUC7lsXtalvyjm8tQm7wBugPBnY4MadLc&callback=initMap">
+  </script>
+  <script>
+    function initMap() {
+      var jsonString = '{'
+        + '"latitude":52.304423,'
+        + '"longitude" : 4.864564,'
+        + '"duration" : 60,'
+        + '"start_time" : "2018-11-11T15:05:41"'
+        + '}';
+      $.ajax({
+        type: "POST",
+        url: "http://18.184.65.7:8080/parking",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        data: jsonString,
+        success: function (data, textStatus, xhr) {
+          console.log(xhr.status);
+          console.log("Success!");
+          var poles = data.data;
+          console.log(poles);
+          var locations = [];
+          for (var i in poles) {
+            console.log(poles[i].zone);
+            locations.push(["Zone: " + poles[i].zone + " :: Usage: " + poles[i].usage, poles[i].longitude, poles[i].latitude]);
+          }
+
+          var infowindow = new google.maps.InfoWindow({});
+          var marker, count;
+          for (count = 0; count < locations.length; count++) {
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(locations[count][1], locations[count][2]),
+              map: map,
+              title: locations[count][0]
+            });
+            google.maps.event.addListener(marker, 'click', (function (marker, count) {
+              return function () {
+                infowindow.setContent(locations[count][0]);
+                infowindow.open(map, marker);
+              }
+            })(marker, count));
+          }
+        }
+      })
+      var center = { lat: 52.304423, lng: 4.864564 };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 17,
+        center: center
+      });
+      var marker = new google.maps.Marker({
+        position: center,
+        icon: {
+          url: "http://maps.google.com/mapfiles/ms/icons/green.png"
+        },
+        map: map
+      });
+    }
+  </script>
+</body>
+
+</html>
