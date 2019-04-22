@@ -125,7 +125,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
 
-STATIC_ROOT = ''
+
 STATICFILES_DIRS = (
     
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
