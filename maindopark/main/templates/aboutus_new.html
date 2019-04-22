@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+  <title>ABOUTSUS</title>
+  <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+  <div class="sticky-mp-header">
+    <img src="{% static 'image/logo.png' %}" style="height: 120px;width: 289px;">
+    <nav class="mp-nuew-nav">
+      <ul>
+        <li>
+          <a href="{% url 'landing' %}">Home</a>
+        </li>
+        <li>
+          <a href="{% url 'aboutus_new' %}">About Us</a>
+        </li>
+        <li>
+          <a href="{% url 'signup' %}">Register</a>
+        </li>
+        <li>
+          <a href="{% url 'features_new' %}">Features</a>
+        </li>
+        <li>
+            <a href="{% url 'profile_new' %}">Profile</a>
+        </li>
+        <li>
+          <a href="{% url 'maps' %}">maps</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  </div>
+  <div class="sticky-mp-content" style="height:2300px;">
+    <div class="container">
+      <article>
+        <h1>About Us</h1>
+        <p>
+          We , at Maindo park attempt to make our customer's life easier by finding them parking spaces at their desired location.
+          Forget about toeing of your cars, parking in no-parking zones and altercations with the traffic police. All you
+          have to do is register into our website and you are all set! All we wish for is your well-being and attempt to
+          smoothen your parking experience. Wishing you an amazing day!
+        </p>
+        <p>
+          We know our routes well, so let us guide you to a more comfortable way of life. For the safety and the benefit of the user,
+          we at SPOTVIK have made a dedicated GPS tracking device that you can buy from our website and attach it to your
+          vehicle. This will let you easily track down your vehicle using our mobile app. So now when you visit a Mall no
+          more remembering the pillar number near which you have parked your vehicle and let us do the finding for you! Find
+          the best suggestions of the parking spots near you. The app gives you the privilege of choosing a parking space,
+          from the multiple parking spaces we offer to you near your desired location. We even show the recommended parking
+          space which we feel is best suited for your needs. The recommended location is chosen using the factors like availability
+          of the space and the distance between the parking space and your destination. Want to know your parking spots before
+          even planning a visit? We have got that figured out too! You can even manually type in the area in our search,
+          we can provide you with parking spots. Voila! Want to check where you parked last, well , worry not because we
+          have that figured out too. We have a history option, where you can see all the spots you have parked before . We
+          provide you with details like date, time and the duration for which you have parked.
+        </p>
+      </article>
+    </div>
+  </div>
+  <footer>
+    <div class="mp-footer-container">
+      <div class="footer-box">
+        <p>Copyright &copy; MaindoWorks V.O.F., Amstelveen, The Netherlands</p>
+      </div>
+      <div class="mp-footer-box">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-behance"></i>
+        <i class="fa fa-github"></i>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

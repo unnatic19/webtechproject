@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>FEATURES</title>
+  <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+  <div class="sticky-mp-header">
+    <img src="{% static 'image/logo.png' %}" style="height: 120px;width: 289px;">
+    <nav class="mp-nuew-nav">
+      <ul>
+        <li>
+          <a href="{% url 'landing' %}">Home</a>
+        </li>
+        <li>
+          <a href="{% url 'aboutus_new' %}">About Us</a>
+        </li>
+        <li>
+          <a href="{% url 'signup' %}">Register</a>
+        </li>
+        <li>
+          <a href="{% url 'features_new' %}">Features</a>
+        </li>
+        <li>
+          <a href="{% url 'profile_new' %}">Profile</a>
+        </li>
+        <li>
+          <a href="{% url 'maps' %}">maps</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="sticky-mp-canvas-wrap">
+  </div>
+  <div class="sticky-mp-content">
+    <div class="wrapper">
+      <div class="tabs">
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+          <label for="tab-1" class="tab-label">FIND THE RIGHT SPOT</label>
+          <div class="tab-content">To find a parking spot is to find a seat in heaven. And so we at Mindo Park do this job for you. Not finding a
+            parking spot near your favorite street-side food place? Need to quickly run to a medical store to grab medicines,
+            but there is no way to park without causing a colossal traffic jam behind you? To save you from numerous curses
+            and unnecessary toeing of your vehicle, our website will help you find the closest legal parking spot, thus making
+            your life so much more satisfying!</div>
+        </div>
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+          <label for="tab-2" class="tab-label">AVOID GETTING TICKETS</label>
+          <div class="tab-content">We know all of us park at no parking zone by mistake and get a ticket, but now its time to say goodbye to those
+            days. We are here to save those few extra bucks and that dreadful tedious trip to the police station, by simply
+            locating for you guys, the closest parking space available in the locality! Now go grab that parking space before
+            someone else does!</div>
+        </div>
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+          <label for="tab-3" class="tab-label">WE KNOW THE WAY</label>
+          <div class="tab-content">We know our routes well, so let us guide you to a more comfortable way of life. For the safety and the benefit
+            of the user, we at MaindoPark have made a dedicated GPS tracking device that you can buy from our website and
+            attach it to your vehicle. This will let you easily track down your vehicle using our mobile app. So now when
+            you visit a Mall no more remembering the pillar number near which you have parked your vehicle and let us do
+            the finding for you!</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="mp-footer-container">
+      <div class="footer-box">
+        <p>Copyright &copy; MaindoWorks V.O.F., Amstelveen, The Netherlands</p>
+      </div>
+      <div class="mp-footer-box">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-behance"></i>
+        <i class="fa fa-github"></i>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>signup</title>
+  <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+  <div class="sticky-mp-header">
+    <img src="{% static 'image/logo.png' %}" style="height: 120px;width: 289px;">
+    <nav class="mp-nuew-nav">
+      <ul>
+        <li>
+          <a href="{% url 'landing' %}">Home</a>
+        </li>
+        <li>
+          <a href="{% url 'aboutus_new' %}">About Us</a>
+        </li>
+        <li>
+          <a href="">Register</a>
+        </li>
+        <li>
+          <a href="{% url 'features_new' %}">Features</a>
+        </li>
+        <li>
+          <a href="{% url 'profile_new' %}">Profile</a>
+        </li>
+       
+        <li>
+          <a href="{% url 'maps' %}">maps</a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+  <div class="sticky-mp-canvas-wrap">
+  </div>
+  <div class="sticky-mp-content">
+    <div class="contact">
+      <div class="head">
+        <h3>SIGN UP NOW</h3>
+        <i class="fa fa-comment fa-lg"></i>
+      </div>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign up</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>LOGIN</title>
+  <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+  <div class="sticky-mp-canvas-wrap">
+  </div>
+  <div class="sticky-mp-content">
+    <div class="login-form">
+      <h1>Sign In</h1>
+      <form  method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="" value="Login">
+      </form>
+    </div>
+  </div>
+  <footer>
+    <div class="mp-footer-container">
+      <div class="footer-box">
+        <p>Copyright &copy; MaindoWorks V.O.F., Amstelveen, The Netherlands</p>
+      </div>
+      <div class="mp-footer-box">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-behance"></i>
+        <i class="fa fa-github"></i>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>profile</title>
+  <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'css/style2.css' %}" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+  <div class="sticky-mp-header">
+    <img src="{% static 'image/logo.png' %}" style="height: 120px;width: 289px;">
+    <nav class="mp-nuew-nav">
+    
+        <ul>
+          <li>
+            <a href="{% url 'landing' %}">Home</a>
+          </li>
+          <li>
+            <a href="{% url 'aboutus_new' %}">About Us</a>
+          </li>
+          <li>
+            <a href="{% url 'signup' %}">Register</a>
+          </li>
+          <li>
+            <a href="{% url 'features_new' %}">Features</a>
+          </li>
+          <li>
+            <a href="{% url 'profile_new' %}">Profile</a>
+          </li>
+         
+          <li>
+            <a href="{% url 'maps' %}">maps</a>
+          </li>
+  
+        </ul>
+      </ul>
+    </nav>
+  </div>
+  <div class="sticky-mp-canvas-wrap">
+  </div>
+
+  <div class="sticky-mp-content">
+      <h1 class="title">User Profile</h1>
+    <div class="container">
+      <div class="row cf">
+        <div id="card1" class="card four col">
+          <div class="image-wrapper"></div>
+          <h3 class="name">
+            </h3>
+          <div class="options">
+            <ul>
+              <li>
+                <span class="icon">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+                Hey {{ posts.username }}
+              </li>
+              <li>
+                <span class="icon">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </span> 
+                Country : {{ posts.country_name }}
+              </li></li>
+              <li>
+                <span class="icon">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                </span> 
+                Number of Rides : {{ posts.car_rides }}</li></li>
+              <li>
+                <span class="icon">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </span> 
+               Phone number :{{ posts.phone_number }}
+              </li></li>
+            </ul>
+          </div>
+        </div>
+
+       
+  </footer>
+</body>
+
+</html>
